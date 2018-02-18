@@ -10,7 +10,20 @@ class ListaNegociacoes {
         this._negociacoes.push(negociacao);
     }
 
-    total () {
+    esvazia () {
+
+        this._negociacoes = [];
+    }
+
+    ordena(criterio) {
+        this._negociacoes.sort(criterio);        
+    }
+
+    inverteOrdem() {
+        this._negociacoes.reverse();
+    }
+
+    get volumeTotal () {
         let total = 0.0;
         this._negociacoes.map(n => total += n.valor)
         return total;
