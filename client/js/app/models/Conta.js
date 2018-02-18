@@ -1,31 +1,78 @@
-class Conta {
+'use strict';
 
-    constructor (titular, conta) {
+System.register([], function (_export, _context) {
+    "use strict";
 
-        this._titular = titular;
-        this._conta = conta;
-        this._saldo = 0.0;
+    var _createClass, Conta;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
     }
 
-    deposita(valor) {
-        console.log('Valor depositado: ' + valor);
-        this._saldo += valor;
-    }
+    return {
+        setters: [],
+        execute: function () {
+            _createClass = function () {
+                function defineProperties(target, props) {
+                    for (var i = 0; i < props.length; i++) {
+                        var descriptor = props[i];
+                        descriptor.enumerable = descriptor.enumerable || false;
+                        descriptor.configurable = true;
+                        if ("value" in descriptor) descriptor.writable = true;
+                        Object.defineProperty(target, descriptor.key, descriptor);
+                    }
+                }
 
-    atualiza (taxa) {
+                return function (Constructor, protoProps, staticProps) {
+                    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+                    if (staticProps) defineProperties(Constructor, staticProps);
+                    return Constructor;
+                };
+            }();
 
-        throw new Error('Ométodo atualiza deve ser implementado pelas subclasses');
-    }
+            Conta = function () {
+                function Conta(titular, conta) {
+                    _classCallCheck(this, Conta);
 
-    get saldo () {
-        return this._saldo;
-    }
+                    this._titular = titular;
+                    this._conta = conta;
+                    this._saldo = 0.0;
+                }
 
-    get titular () {
-        return this._titular;
-    }
+                _createClass(Conta, [{
+                    key: 'deposita',
+                    value: function deposita(valor) {
+                        console.log('Valor depositado: ' + valor);
+                        this._saldo += valor;
+                    }
+                }, {
+                    key: 'atualiza',
+                    value: function atualiza(taxa) {
 
-    get conta () {
-        return this._conta;
-    }
-}
+                        throw new Error('Ométodo atualiza deve ser implementado pelas subclasses');
+                    }
+                }, {
+                    key: 'saldo',
+                    get: function get() {
+                        return this._saldo;
+                    }
+                }, {
+                    key: 'titular',
+                    get: function get() {
+                        return this._titular;
+                    }
+                }, {
+                    key: 'conta',
+                    get: function get() {
+                        return this._conta;
+                    }
+                }]);
+
+                return Conta;
+            }();
+        }
+    };
+});
+//# sourceMappingURL=Conta.js.map
